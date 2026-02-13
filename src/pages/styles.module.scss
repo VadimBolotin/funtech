@@ -1,0 +1,14 @@
+ 
+// .main { 
+//   padding-top: 145px;
+// }
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main {
+  padding-top: 145px;
+  /* если нужен отдельный скролл для main, можно будет вернуть height + overflow,
+     но сейчас даём странице скроллиться через body */
+}

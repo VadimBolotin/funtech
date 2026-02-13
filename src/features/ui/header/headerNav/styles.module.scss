@@ -1,0 +1,36 @@
+@use '../../../../styles/breakpoints.scss' as *;
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    @include respond-up-to("laptop") {
+        gap: 32px;
+    }
+    @include respond-up-to("mobile"){
+        margin-top: 150px;
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 30px;
+    }
+}
+.link{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 149%;
+    text-transform: uppercase;
+    color: #606060;
+    cursor: pointer;
+    transition: all .5s ease-in;
+    &:hover{
+        font-weight: 700;
+        color: #000;
+    }
+    @include respond-up-to("laptop") {
+        font-size: 14px;
+    }
+    @include respond-up-to("mobile") {
+        font-size: 40px;
+        line-height: 105%;
+    }
+}

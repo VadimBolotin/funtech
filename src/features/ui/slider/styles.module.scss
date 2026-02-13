@@ -1,0 +1,64 @@
+@use '../../../styles/breakpoints' as *;
+
+@import '../../../styles/fonts.css';
+
+.slider {
+  padding: 215px 0 70px;
+  background: #f1f1f1;
+
+  @include respond-up-to("laptop") {
+    padding: 150px 0 50px;
+  }
+}
+:global(.swiper) {
+  overflow: unset;
+}
+
+.title {
+    font-family: var(--font-slider);
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 104%;
+    text-align: center;
+    color: #c5c5c5;
+
+    margin-bottom: 70px;
+
+    @include respond-up-to("laptop") {
+      font-size: 32px;
+
+      margin-bottom: 50px;
+    }
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.trackDragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 auto;
+}
+.loading,
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-slider);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 104%;
+    text-align: center;
+    color: #c5c5c5;
+
+    margin-bottom: 70px;
+}
+

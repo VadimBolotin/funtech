@@ -1,0 +1,174 @@
+@use '../../../../styles/breakpoints.scss' as *;
+
+@import '../../../../styles/fonts.css';
+
+.card{
+    border-radius: 24px;
+    padding: 14px;
+    width: 281px;
+    height: 395px;
+
+    box-shadow: 38px 12px 60px 0 rgba(199, 199, 199, 0.6);
+    background: #fff;
+
+    @include respond-up-to("laptop") {
+        border-radius: 18px;
+        padding: 10px;
+        width: 210px;
+        height: 294px;
+    }
+}
+.img{
+    position: relative;
+    display: block;
+    border-radius: 24px;
+    width: 253px;
+    height: 253px;
+
+    @include respond-up-to("laptop") {
+        width: 190px;
+        height: 190px;
+    }
+}
+.img img{
+    @include respond-up-to("laptop") {
+        width: 190px;
+        height: 190px;
+    }
+}
+.data{
+    position: absolute;
+    right: 11px;
+    top: 14px;
+    border: 1px solid rgba(28, 29, 32, 0.08);
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 120px;
+    height: 34px;
+
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 14px 0 rgba(28, 29, 32, 0.08);
+    background: rgba(28, 29, 32, 0.35);
+
+    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: #fff;
+    z-index: 10;
+
+    @include respond-up-to("laptop") {
+        border-radius: 7px;
+        padding: 7px 10px;
+        width: 86px;
+        height: 24px;
+
+        backdrop-filter: blur(4px);
+        box-shadow: 0 4px 11px 0 rgba(28, 29, 32, 0.08);
+
+        font-size: 10px;
+    }
+}
+.title{
+    font-family: var(--font-slider);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 109%;
+    color: #141416;
+
+    margin-top: 20px;
+
+    max-width: 253px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include respond-up-to("laptop") {
+        font-size: 16px;
+        line-height: 113%;
+
+        margin-top: 14px;
+    }
+}
+.descr{
+    display: flex;
+    gap: 53px;
+    margin-top: 20px;
+
+    @include respond-up-to("laptop") {
+        margin-top: 14px;
+        gap: 37px;
+    }
+}
+.current{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 80px;
+    width: 100%;
+    @include respond-up-to("laptop") {
+        max-width: 63px;
+    }
+}
+.cuurentPrace{
+    @include respond-up-to("laptop") {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 117%;
+        color: #141416;
+     }
+    
+}
+.text{
+    font-family: var(--font-slider);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #94a3b8;
+
+    @include respond-up-to("laptop") {
+       font-size: 11px;
+    }
+}
+.prace{
+    display: flex;
+    align-items: center;
+}
+.mdi{
+    @include respond-up-to("laptop") {
+        width: 16px;
+        height: 16px;
+     }
+}
+
+.btn{
+    border-radius: 12px;
+    width: 120px;
+    height: 50px;
+
+    background: #141416;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .3s ease-in;
+    p {
+        font-family: var(--font-slider);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        color: #fff;
+    }
+    &:hover{
+        background: #333;
+    }
+
+    @include respond-up-to("laptop") {
+        border-radius: 9px;
+        width: 90px;
+        height: 38px;
+
+        font-size: 11px;
+     }
+}

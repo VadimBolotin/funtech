@@ -1,0 +1,56 @@
+@use "sass:map";
+
+// Карта брейкпоинтов
+// ВАЖНО: ключи как строки, чтобы можно было вызывать миксины так:
+// @include respond-up-to("mobile");
+$breakpoints: (
+  "mobile": 460px,
+  "tablet": 710px,
+  "laptop": 1024px,
+  "desktop": 1280px,
+  "wide": 1920px,
+);
+
+/// Миксин для применения стилей на экранах МЕНЬШЕ или РАВНО заданному брейкпоинту
+/// Пример: respond-up-to("mobile") → @media (max-width: 480px)
+@mixin respond-up-to($device) {
+  $size: map.get($breakpoints, $device);
+
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Нет брейкпоинта с именем `#{$device}`";
+  }
+}
+
+/// Миксин для применения стилей на экранах БОЛЬШЕ или РАВНО заданному брейкпоинту
+/// Пример: respond-from("tablet") → @media (min-width: 768px)
+@mixin respond-from($device) {
+  $size: map.get($breakpoints, $device);
+
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Нет брейкпоинта с именем `#{$device}`";
+  }
+}
+
+/// Миксин для применения стилей ТОЛЬКО в заданном диапазоне брейкпоинтов
+/// Пример: respond-between("mobile", "tablet") → @media (min-width: 480px) and (max-width: 768px)
+@mixin respond-between($from, $to) {
+  $min: map.get($breakpoints, $from);
+  $max: map.get($breakpoints, $to);
+
+  @if $min and $max {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @warn "Неверные брейкпоинты: `#{$from}`, `#{$to}`";
+  }
+}
+
